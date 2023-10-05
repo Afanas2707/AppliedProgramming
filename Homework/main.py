@@ -189,12 +189,11 @@ print(f"The professor for the {math_course.course_name} course is {math_course.p
 # 2) Обрабатываю собственное исключение. Если попытаться записать больше 100 студентов на курс по математике,
 #    то бросится исключение
 
-hobby_list = ["Education", "Fashion", "Fitness", "Music", "Nature", "Playing"]
 
 for i in range(0, 999):
     try:
-        math_course.enroll_student(Student(hobby=hobby_list[randrange(len(hobby_list))], name=names.get_first_name(),
-                                           age=random.randint(18, 27), grade=chr(random.randint(ord('A'), ord('D')))))
+        math_course.enroll_student(Student(hobby="dummy", name="dummy",
+                                           age=0, grade="A"))
     except TooManyStudentsEnrolledException:
         print("Custom exception handled")
         break
