@@ -1,0 +1,618 @@
+{
+    "course_code": 101,
+    "course_name": "Mathematics",
+    "professor": {
+        "salary": 500000,
+        "name": "Ludmila",
+        "age": 55,
+        "degree": "PhD in Mathematics"
+    },
+    "students": [
+        {
+            "name": "Alice",
+            "age": 20,
+            "hobby": "football",
+            "grade": "A"
+        },
+        {
+            "name": "Bob",
+            "age": 22,
+            "hobby": "violin",
+            "grade": "B"
+        },
+        {
+            "name": "Shelli",
+            "age": 24,
+            "hobby": "Playing",
+            "grade": "H"
+        },
+        {
+            "name": "Brian",
+            "age": 20,
+            "hobby": "Nature",
+            "grade": "R"
+        },
+        {
+            "name": "Don",
+            "age": 27,
+            "hobby": "Nature",
+            "grade": "J"
+        },
+        {
+            "name": "Elaina",
+            "age": 23,
+            "hobby": "Music",
+            "grade": "T"
+        },
+        {
+            "name": "Elvie",
+            "age": 23,
+            "hobby": "Education",
+            "grade": "F"
+        },
+        {
+            "name": "Robert",
+            "age": 18,
+            "hobby": "Playing",
+            "grade": "G"
+        },
+        {
+            "name": "Glenn",
+            "age": 18,
+            "hobby": "Music",
+            "grade": "K"
+        },
+        {
+            "name": "Tasha",
+            "age": 22,
+            "hobby": "Playing",
+            "grade": "G"
+        },
+        {
+            "name": "Ali",
+            "age": 21,
+            "hobby": "Fitness",
+            "grade": "S"
+        },
+        {
+            "name": "Betty",
+            "age": 25,
+            "hobby": "Fitness",
+            "grade": "Z"
+        },
+        {
+            "name": "Wallace",
+            "age": 19,
+            "hobby": "Education",
+            "grade": "R"
+        },
+        {
+            "name": "Raphael",
+            "age": 26,
+            "hobby": "Music",
+            "grade": "U"
+        },
+        {
+            "name": "Lloyd",
+            "age": 21,
+            "hobby": "Nature",
+            "grade": "B"
+        },
+        {
+            "name": "Delia",
+            "age": 24,
+            "hobby": "Fashion",
+            "grade": "A"
+        },
+        {
+            "name": "Dakota",
+            "age": 25,
+            "hobby": "Education",
+            "grade": "E"
+        },
+        {
+            "name": "Tamara",
+            "age": 22,
+            "hobby": "Fashion",
+            "grade": "X"
+        },
+        {
+            "name": "Hunter",
+            "age": 18,
+            "hobby": "Music",
+            "grade": "B"
+        },
+        {
+            "name": "Adolph",
+            "age": 20,
+            "hobby": "Education",
+            "grade": "F"
+        },
+        {
+            "name": "Robert",
+            "age": 27,
+            "hobby": "Nature",
+            "grade": "W"
+        },
+        {
+            "name": "Jamar",
+            "age": 19,
+            "hobby": "Fitness",
+            "grade": "N"
+        },
+        {
+            "name": "Sherry",
+            "age": 25,
+            "hobby": "Education",
+            "grade": "M"
+        },
+        {
+            "name": "John",
+            "age": 20,
+            "hobby": "Education",
+            "grade": "Z"
+        },
+        {
+            "name": "Francine",
+            "age": 25,
+            "hobby": "Music",
+            "grade": "U"
+        },
+        {
+            "name": "William",
+            "age": 20,
+            "hobby": "Fashion",
+            "grade": "G"
+        },
+        {
+            "name": "Jake",
+            "age": 27,
+            "hobby": "Fitness",
+            "grade": "G"
+        },
+        {
+            "name": "Tod",
+            "age": 25,
+            "hobby": "Fashion",
+            "grade": "W"
+        },
+        {
+            "name": "Nora",
+            "age": 22,
+            "hobby": "Fashion",
+            "grade": "A"
+        },
+        {
+            "name": "Robert",
+            "age": 27,
+            "hobby": "Nature",
+            "grade": "I"
+        },
+        {
+            "name": "Mary",
+            "age": 27,
+            "hobby": "Playing",
+            "grade": "A"
+        },
+        {
+            "name": "Danny",
+            "age": 25,
+            "hobby": "Fashion",
+            "grade": "D"
+        },
+        {
+            "name": "Rafael",
+            "age": 22,
+            "hobby": "Fitness",
+            "grade": "S"
+        },
+        {
+            "name": "Maria",
+            "age": 24,
+            "hobby": "Education",
+            "grade": "O"
+        },
+        {
+            "name": "Richard",
+            "age": 24,
+            "hobby": "Playing",
+            "grade": "N"
+        },
+        {
+            "name": "Amanda",
+            "age": 20,
+            "hobby": "Playing",
+            "grade": "M"
+        },
+        {
+            "name": "Elton",
+            "age": 23,
+            "hobby": "Education",
+            "grade": "Z"
+        },
+        {
+            "name": "Brad",
+            "age": 20,
+            "hobby": "Fitness",
+            "grade": "K"
+        },
+        {
+            "name": "Christina",
+            "age": 23,
+            "hobby": "Music",
+            "grade": "J"
+        },
+        {
+            "name": "Brian",
+            "age": 27,
+            "hobby": "Education",
+            "grade": "H"
+        },
+        {
+            "name": "Jose",
+            "age": 25,
+            "hobby": "Music",
+            "grade": "G"
+        },
+        {
+            "name": "Luis",
+            "age": 21,
+            "hobby": "Education",
+            "grade": "S"
+        },
+        {
+            "name": "Alan",
+            "age": 27,
+            "hobby": "Nature",
+            "grade": "X"
+        },
+        {
+            "name": "Jody",
+            "age": 25,
+            "hobby": "Music",
+            "grade": "Q"
+        },
+        {
+            "name": "Kimberly",
+            "age": 21,
+            "hobby": "Fitness",
+            "grade": "E"
+        },
+        {
+            "name": "Mark",
+            "age": 24,
+            "hobby": "Fitness",
+            "grade": "E"
+        },
+        {
+            "name": "Melody",
+            "age": 25,
+            "hobby": "Music",
+            "grade": "G"
+        },
+        {
+            "name": "Bryce",
+            "age": 18,
+            "hobby": "Fitness",
+            "grade": "T"
+        },
+        {
+            "name": "Rosa",
+            "age": 22,
+            "hobby": "Fitness",
+            "grade": "I"
+        },
+        {
+            "name": "Lynda",
+            "age": 18,
+            "hobby": "Playing",
+            "grade": "B"
+        },
+        {
+            "name": "Jc",
+            "age": 19,
+            "hobby": "Fitness",
+            "grade": "G"
+        },
+        {
+            "name": "Nancy",
+            "age": 25,
+            "hobby": "Fashion",
+            "grade": "P"
+        },
+        {
+            "name": "Gloria",
+            "age": 22,
+            "hobby": "Fitness",
+            "grade": "H"
+        },
+        {
+            "name": "Joann",
+            "age": 18,
+            "hobby": "Music",
+            "grade": "P"
+        },
+        {
+            "name": "Sandra",
+            "age": 23,
+            "hobby": "Music",
+            "grade": "D"
+        },
+        {
+            "name": "Harry",
+            "age": 26,
+            "hobby": "Music",
+            "grade": "A"
+        },
+        {
+            "name": "Robert",
+            "age": 21,
+            "hobby": "Education",
+            "grade": "U"
+        },
+        {
+            "name": "Justin",
+            "age": 19,
+            "hobby": "Nature",
+            "grade": "C"
+        },
+        {
+            "name": "Marian",
+            "age": 20,
+            "hobby": "Nature",
+            "grade": "V"
+        },
+        {
+            "name": "Audrey",
+            "age": 26,
+            "hobby": "Nature",
+            "grade": "Q"
+        },
+        {
+            "name": "Dorothy",
+            "age": 19,
+            "hobby": "Education",
+            "grade": "P"
+        },
+        {
+            "name": "Maria",
+            "age": 27,
+            "hobby": "Music",
+            "grade": "Y"
+        },
+        {
+            "name": "James",
+            "age": 19,
+            "hobby": "Playing",
+            "grade": "O"
+        },
+        {
+            "name": "Lillian",
+            "age": 25,
+            "hobby": "Nature",
+            "grade": "L"
+        },
+        {
+            "name": "Pablo",
+            "age": 27,
+            "hobby": "Nature",
+            "grade": "R"
+        },
+        {
+            "name": "Christopher",
+            "age": 18,
+            "hobby": "Nature",
+            "grade": "Z"
+        },
+        {
+            "name": "Deborah",
+            "age": 23,
+            "hobby": "Nature",
+            "grade": "J"
+        },
+        {
+            "name": "Mose",
+            "age": 18,
+            "hobby": "Fashion",
+            "grade": "E"
+        },
+        {
+            "name": "Lorene",
+            "age": 22,
+            "hobby": "Fitness",
+            "grade": "B"
+        },
+        {
+            "name": "Francisco",
+            "age": 26,
+            "hobby": "Music",
+            "grade": "W"
+        },
+        {
+            "name": "Mildred",
+            "age": 19,
+            "hobby": "Fitness",
+            "grade": "F"
+        },
+        {
+            "name": "Alina",
+            "age": 22,
+            "hobby": "Fitness",
+            "grade": "Q"
+        },
+        {
+            "name": "Rosemary",
+            "age": 21,
+            "hobby": "Fitness",
+            "grade": "V"
+        },
+        {
+            "name": "George",
+            "age": 24,
+            "hobby": "Playing",
+            "grade": "P"
+        },
+        {
+            "name": "Danielle",
+            "age": 21,
+            "hobby": "Fitness",
+            "grade": "G"
+        },
+        {
+            "name": "Michael",
+            "age": 18,
+            "hobby": "Fitness",
+            "grade": "S"
+        },
+        {
+            "name": "Marti",
+            "age": 24,
+            "hobby": "Playing",
+            "grade": "F"
+        },
+        {
+            "name": "Sandra",
+            "age": 22,
+            "hobby": "Fashion",
+            "grade": "O"
+        },
+        {
+            "name": "Ronald",
+            "age": 22,
+            "hobby": "Fitness",
+            "grade": "C"
+        },
+        {
+            "name": "Edna",
+            "age": 18,
+            "hobby": "Music",
+            "grade": "E"
+        },
+        {
+            "name": "Carolyn",
+            "age": 20,
+            "hobby": "Nature",
+            "grade": "D"
+        },
+        {
+            "name": "Stephanie",
+            "age": 18,
+            "hobby": "Music",
+            "grade": "M"
+        },
+        {
+            "name": "William",
+            "age": 20,
+            "hobby": "Nature",
+            "grade": "X"
+        },
+        {
+            "name": "George",
+            "age": 25,
+            "hobby": "Playing",
+            "grade": "E"
+        },
+        {
+            "name": "Stanford",
+            "age": 24,
+            "hobby": "Nature",
+            "grade": "A"
+        },
+        {
+            "name": "Judith",
+            "age": 24,
+            "hobby": "Fitness",
+            "grade": "W"
+        },
+        {
+            "name": "Douglas",
+            "age": 27,
+            "hobby": "Education",
+            "grade": "O"
+        },
+        {
+            "name": "Kenya",
+            "age": 25,
+            "hobby": "Education",
+            "grade": "I"
+        },
+        {
+            "name": "Gary",
+            "age": 27,
+            "hobby": "Music",
+            "grade": "V"
+        },
+        {
+            "name": "Elisabeth",
+            "age": 19,
+            "hobby": "Education",
+            "grade": "P"
+        },
+        {
+            "name": "Monica",
+            "age": 27,
+            "hobby": "Fashion",
+            "grade": "A"
+        },
+        {
+            "name": "Vicki",
+            "age": 27,
+            "hobby": "Playing",
+            "grade": "E"
+        },
+        {
+            "name": "Mary",
+            "age": 19,
+            "hobby": "Fashion",
+            "grade": "H"
+        },
+        {
+            "name": "Avis",
+            "age": 23,
+            "hobby": "Fashion",
+            "grade": "V"
+        },
+        {
+            "name": "Donovan",
+            "age": 26,
+            "hobby": "Education",
+            "grade": "B"
+        },
+        {
+            "name": "Clifford",
+            "age": 24,
+            "hobby": "Music",
+            "grade": "U"
+        },
+        {
+            "name": "Jerry",
+            "age": 20,
+            "hobby": "Education",
+            "grade": "H"
+        },
+        {
+            "name": "Michael",
+            "age": 27,
+            "hobby": "Fashion",
+            "grade": "D"
+        },
+        {
+            "name": "Julie",
+            "age": 23,
+            "hobby": "Nature",
+            "grade": "H"
+        },
+        {
+            "name": "Francisco",
+            "age": 27,
+            "hobby": "Playing",
+            "grade": "C"
+        },
+        {
+            "name": "Amanda",
+            "age": 21,
+            "hobby": "Nature",
+            "grade": "D"
+        }
+    ]
+}
