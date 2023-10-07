@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Student>
+    <Name>some_name</Name>
+    <Age>22</Age>
+    <Hobby>football</Hobby>
+    <Grade>A</Grade>
+</Student>
