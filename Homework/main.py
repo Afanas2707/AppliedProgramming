@@ -1,17 +1,38 @@
 import json
-import random
-from random import randrange
 from xml.etree import ElementTree
-import names
+
+
+class PersonAgeException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
 
 
 class Person:
     def __init__(self, name: str, age: int):
-        self.name = name
-        self.age = age
+        if age <= 100:
+            self.__age = age
+        else:
+            raise PersonAgeException("Student's age must be less than 100")
+
+        self.__name = name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_age(self, age):
+        if age <= 100:
+            self.__age = age
+        else:
+            raise PersonAgeException("Student's age must be less than 100")
+
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
 
     def sleeping(self):
-        print(self.name + " sleeping...")
+        print(self.__name + " sleeping...")
 
 
 class Student(Person):
@@ -22,15 +43,38 @@ class Student(Person):
 
     def to_dict(self):
         student_dict = {
-            "name": self.name,
-            "age": self.age,
+            "name": self.get_name(),
+            "age": self.get_age(),
             "hobby": self.hobby,
             "grade": self.grade
         }
         return student_dict
 
     def doing_homework(self):
-        print(self.name + " Doing homework...")
+        print(self.get_name() + " Doing homework...")
+
+    def to_xml(self):
+        student_element = ElementTree.Element("Student")
+
+        name_element = ElementTree.Element("Name")
+        name_element.text = self.get_name()
+        student_element.append(name_element)
+
+        age_element = ElementTree.Element("Age")
+        age_element.text = str(self.get_age())
+        student_element.append(age_element)
+
+        hobby_element = ElementTree.Element("Hobby")
+        hobby_element.text = self.hobby
+        student_element.append(hobby_element)
+
+        grade_element = ElementTree.Element("Grade")
+        grade_element.text = self.grade
+        student_element.append(grade_element)
+
+        xml_tree = ElementTree.ElementTree(student_element)
+
+        return ElementTree.tostring(xml_tree.getroot(), encoding="utf-8", method="xml", xml_declaration=True)
 
 
 class Professor(Person):
@@ -40,7 +84,7 @@ class Professor(Person):
         self.degree = degree
 
     def giving_a_lecture(self):
-        print(self.name + " The professor is giving a lecture...")
+        print(self.get_name() + " The professor is giving a lecture...")
 
 
 class TooManyStudentsEnrolledException(Exception):
@@ -67,8 +111,8 @@ class MathCourse:
             "course_name": self.course_name,
             "professor": {
                 "salary": self.professor.salary,
-                "name": self.professor.name,
-                "age": self.professor.age,
+                "name": self.professor.get_name(),
+                "age": self.professor.get_age(),
                 "degree": self.professor.degree,
             },
             "students": [student.to_dict() for student in self.students]
@@ -116,8 +160,8 @@ class MathCourse:
         if self.professor:
             professor_element = ElementTree.Element("Professor")
             professor_element.set("salary", str(self.professor.salary))
-            professor_element.set("name", self.professor.name)
-            professor_element.set("age", str(self.professor.age))
+            professor_element.set("name", self.professor.get_name())
+            professor_element.set("age", str(self.professor.get_age()))
             professor_element.set("degree", self.professor.degree)
             math_course_element.append(professor_element)
 
@@ -125,8 +169,8 @@ class MathCourse:
             students_element = ElementTree.Element("Students")
             for student in self.students:
                 student_element = ElementTree.Element("Student")
-                student_element.set("name", student.name)
-                student_element.set("age", str(student.age))
+                student_element.set("name", student.get_name())
+                student_element.set("age", str(student.get_age()))
                 student_element.set("hobby", student.hobby)
                 student_element.set("grade", student.grade)
                 students_element.append(student_element)
@@ -182,19 +226,18 @@ student1.sleeping()
 student2.doing_homework()
 math_course.professor.giving_a_lecture()
 
-print(f"{student1.name} is {student1.age} years old and has a grade of {student1.grade}.")
-print(f"{student2.name} is {student2.age} years old and has a grade of {student2.grade}.")
-print(f"The professor for the {math_course.course_name} course is {math_course.professor.name}.")
+print(f"{student1.get_name()} is {student1.get_age()} years old and has a grade of {student1.grade}.")
+print(f"{student2.get_name()} is {student2.get_age()} years old and has a grade of {student2.grade}.")
+print(f"The professor for the {math_course.course_name} course is {math_course.professor.get_name()}.")
 
 # 2) Обрабатываю собственное исключение. Если попытаться записать больше 100 студентов на курс по математике,
 #    то бросится исключение
 
-hobby_list = ["Education", "Fashion", "Fitness", "Music", "Nature", "Playing"]
 
 for i in range(0, 999):
     try:
-        math_course.enroll_student(Student(hobby=hobby_list[randrange(len(hobby_list))], name=names.get_first_name(),
-                                           age=random.randint(18, 27), grade=chr(random.randint(ord('A'), ord('D')))))
+        math_course.enroll_student(Student(hobby="dummy", name="dummy",
+                                           age=0, grade="A"))
     except TooManyStudentsEnrolledException:
         print("Custom exception handled")
         break
@@ -209,25 +252,75 @@ except IndexError:
 # 4) Сначала сериализую объект в json и записываю в файл
 #    Потом десереализую в объект из файла
 
-course_data = math_course.to_dict()
+course_json = math_course.to_dict()
 
 with open('math_course_to_json.json', 'w') as json_file:
-    json.dump(course_data, json_file, indent=4)
+    json.dump(course_json, json_file, indent=4)
 
-with open('math_course_from_json.json', 'r') as json_file:
-    json_data = json_file.read()
-
-math_course_from_json = MathCourse.from_json(json_data)
+try:
+    with open('math_course_from_json.json', 'r') as json_file:
+        json_data = json_file.read()
+        math_course_from_json = MathCourse.from_json(json_data)
+except FileNotFoundError:
+    print("File 'math_course_from_json.json' not found")
 
 # 5) Сначала сериализую объект в xml и записываю в файл
 #    Потом десереализую в объект из файла
 
-xml_data = math_course.to_xml()
+course_xml = math_course.to_xml()
 
 with open('math_course_to_xml.xml', 'wb') as xml_file:
-    xml_file.write(xml_data)
+    xml_file.write(course_xml)
 
-with open('math_course_from_xml.xml', 'r') as xml_file:
-    xml_data = xml_file.read()
+try:
+    with open('math_course_from_xml.xml', 'r') as xml_file:
+        xml_data = xml_file.read()
+        math_course_from_xml = MathCourse.from_xml(xml_data)
+except FileNotFoundError:
+    print("File 'math_course_from_xml.xml' not found")
 
-math_course_from_xml = MathCourse.from_xml(xml_data)
+
+# 6) Дальше идёт код для взаимодействия с программой из консоли
+#    Пользователь может ввести имя, возраст, хобби, оценку студента, имя файла и формат(xml или json)
+#    После ввода он может сделать это ещё раз, пока не откажется продолжать
+#    После выхода из цикла программа завершится и создадутся нужные файлы
+class InvalidFileFormat(Exception):
+    def __init__(self, message):
+        super().__init__(message)
+
+
+is_input = True
+while is_input:
+    try:
+        student_name = input("\nEnter student's name: ")
+        student_age = int(input("Enter student's age: "))
+        student_hobby = input("Enter student's hobby: ")
+        student_grade = input("Enter student's garde: ")
+        new_student = Student(student_hobby, student_name, student_age, student_grade)
+
+        file_name = input("Enter file name: ")
+        file_format = input("Enter file format(xml or json): ")
+
+        if file_format == "json":
+            student_json = new_student.to_dict()
+
+            with open(file_name + ".json", 'w') as json_file:
+                json.dump(student_json, json_file, indent=4)
+        elif file_format == "xml":
+            student_xml = new_student.to_xml()
+
+            with open(file_name + ".xml", 'wb') as xml_file:
+                xml_file.write(student_xml)
+        else:
+            raise InvalidFileFormat("Invalid file format. Please enter 'xml' or 'json'")
+
+        continue_input = input("Do you want to enter another student? (yes/no): ")
+        if continue_input.lower() != "yes":
+            is_input = False
+
+    except PersonAgeException:
+        print("Student's age must be less than 100!\n")
+    except ValueError:
+        print("Invalid input, try again\n")
+    except InvalidFileFormat as e:
+        print("Invalid file format. Please enter 'xml' or 'json'\n")
